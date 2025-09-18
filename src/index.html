@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HikeLog - Your Hiking Journal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'forest-green': '#2d6a4f',
+              'pine': '#40916c',
+              'mint': '#52b788',
+              'light-mint': '#74c69d',
+              'pale-mint': '#95d5b2',
+              'stone': '#d8e2dc',
+              'cream': '#fefae0',
+              'earth': '#dda15e',
+              'dark-slate': '#1b263b',
+              'slate-gray': '#415a77',
+              'light-slate': '#778da9',
+            },
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-dark-slate text-stone">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
+

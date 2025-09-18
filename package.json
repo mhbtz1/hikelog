@@ -1,0 +1,28 @@
+{
+  "name": "hikelog",
+  "version": "1.0.0",
+  "description": "Hike logging application",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite serve src",
+    "build": "vite build",
+    "backend:start": "npx tsx watch src/services/main.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^1.20.0",
+    "@trpc/server": "^11.5.1",
+    "@types/node": "^24.5.2",
+    "@types/react": "^19.1.13",
+    "express": "^5.1.0",
+    "serve": "^14.2.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.6"
+  }
+}
