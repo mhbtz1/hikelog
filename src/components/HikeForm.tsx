@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { Hike, Difficulty } from '../types';
+import { useDebounce } from '../helpers/use-debounce';
 
 interface HikeFormProps {
   onSave: (hike: Hike) => void;
@@ -25,6 +26,7 @@ const HikeForm: React.FC<HikeFormProps> = ({ onSave, onCancel }) => {
   const [difficulty, setDifficulty] = useState<Difficulty>(Difficulty.Moderate);
   const [distance, setDistance] = useState<number | ''>('');
 
+  const handleClick = useDebounce(() => { console.log('Debounced click.')}, 2000)
   const handlePhotoUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
@@ -67,7 +69,7 @@ const HikeForm: React.FC<HikeFormProps> = ({ onSave, onCancel }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label htmlFor="date" className="block text-sm font-medium text-light-slate">Date</label>
-                    <input type="date" id="date" value={date} onChange={e => setDate(e.target.value)} className="mt-1 block w-full bg-dark-slate border-slate-gray rounded-md shadow-sm py-2 px-3 text-stone focus:outline-none focus:ring-mint focus:border-mint" required />
+                    <input type="date" id="date" value={date} onClick={handleClick} onChange={e => (() => {console.log(`Set date to ${e.target.value}`); setDate(e.target.value)})()} className="mt-1 block w-full bg-dark-slate border-slate-gray rounded-md shadow-sm py-2 px-3 text-stone focus:outline-none focus:ring-mint focus:border-mint" required />
                 </div>
                 <div>
                     <label htmlFor="distance" className="block text-sm font-medium text-light-slate">Distance (miles)</label>
